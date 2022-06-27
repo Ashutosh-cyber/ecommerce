@@ -1,14 +1,50 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "./Navbar";
+import { auth, fs } from "../Config/Config";
 
 export const About = () => {
+  function GetCurrentUser() {
+    const [user, setUser] = useState(null);
+    useEffect(() => {
+      auth.onAuthStateChanged((user) => {
+        if (user) {
+          fs.collection("users")
+            .doc(user.uid)
+            .get()
+            .then((snapshot) => {
+              setUser(snapshot.data().FullName);
+            });
+        } else {
+          setUser(null);
+        }
+      });
+    }, []);
+    return user;
+  }
+
+  const user = GetCurrentUser();
+
+  // state of totalProducts
+  const [totalProducts, setTotalProducts] = useState(0);
+  // getting cart products
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        fs.collection("Cart " + user.uid).onSnapshot((snapshot) => {
+          const qty = snapshot.docs.length;
+          setTotalProducts(qty);
+        });
+      }
+    });
+  }, []);
+
   return (
     <>
-      <Navbar />
+      <Navbar user={user} />
       <div>
-        <div>About us</div>
-        <p>
+        <div className="About-us-container">About us</div>
+        <p className="Aboutus">
           Agriculture is the backbone of the Indian Economy"- said Mahatma
           Gandhi six decades ago. Even today, the situation is still the same,
           with almost the entire economy being sustained by agriculture, which
@@ -17,7 +53,7 @@ export const About = () => {
           population. Rapid growth in agriculture is essential not only for
           self-reliance but also to earn valuable foreign exchange.
         </p>
-        <p>
+        <p className="Aboutus">
           Indian farmers are second to none in production and productivity
           despite of the fact that millions are marginal and small farmers. They
           adopt improved agriculture technology as efficiently as farmers in
@@ -27,7 +63,7 @@ export const About = () => {
           farmers are going to ensure food and nutritional security to the
           Nation.
         </p>
-        <p>
+        <p className="Aboutus">
           It is envisaged to make available relevant information and services to
           the farming community and private sector through the use of
           information and communication technologies, to supplement the existing

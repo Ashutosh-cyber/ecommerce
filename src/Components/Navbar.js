@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../Images/logo.png";
+import logo from "../Images/barn.png";
 import { Icon } from "react-icons-kit";
 import { shoppingCart } from "react-icons-kit/feather/shoppingCart";
 import { auth } from "../Config/Config";
 import { useHistory } from "react-router-dom";
 
-export const Navbar = ({ user }) => {
+export const Navbar = ({ user, totalProducts }) => {
   const history = useHistory();
 
   const handleLogout = () => {
@@ -26,7 +26,9 @@ export const Navbar = ({ user }) => {
         {!user && (
           <>
             <div>
-              <Link to="home">Home</Link>
+              <Link className="navlink" to="home">
+                HOME
+              </Link>
             </div>
             <div>
               <Link className="navlink" to="signup">
@@ -39,7 +41,9 @@ export const Navbar = ({ user }) => {
               </Link>
             </div>
             <div>
-              <Link to="aboutus">About Us</Link>
+              <Link className="navlink" to="aboutus">
+                ABOUT US
+              </Link>
             </div>
           </>
         )}
@@ -47,22 +51,27 @@ export const Navbar = ({ user }) => {
         {user && (
           <>
             <div>
-              <Link to="home">Home</Link>
+              <Link className="navlink" to="/home">
+                HOME
+              </Link>
             </div>
             <div>
               <Link className="navlink" to="/">
                 {user}
               </Link>
             </div>
+            <div>
+              <Link className="navlink" to="/aboutus">
+                ABOUT US
+              </Link>
+            </div>
             <div className="cart-menu-btn">
               <Link className="navlink" to="/cart">
                 <Icon icon={shoppingCart} size={20} />
               </Link>
-              {/* <span className='cart-indicator'>{totalQty}</span> */}
+              {<span className="cart-indicator">{totalProducts}</span>}
             </div>
-            <div>
-              <Link to="aboutus">About Us</Link>
-            </div>
+
             <div className="btn btn-danger btn-md" onClick={handleLogout}>
               LOGOUT
             </div>

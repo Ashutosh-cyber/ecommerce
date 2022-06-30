@@ -49,7 +49,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(255,253,208);  
+  background-color: #14213D;
+    
 }
 
 @media(max-width: 450px){
@@ -75,6 +76,7 @@
   font-size: 16px;
   margin-right: 24px;
   align-items: center;
+  
 }
 
 @media(max-width: 450px){
@@ -98,7 +100,7 @@
 
 .navbar .rightside div .navlink{
   text-decoration: none;
-  color: #000;
+  color: #FCA311;
 }
 
 /* products */
@@ -173,8 +175,10 @@
   color: #e00a02;
 }
 
+
+/*cart*/
 .cart-btn{
-  background-color: #e00a02 !important;
+  background-color: #FCA311 !important;
 }
 
 .cart-menu-btn{
@@ -183,10 +187,10 @@
 
 .cart-menu-btn .cart-indicator{
   width: 18px;
-  background-color: #e00a02;
+  background-color: #FCA311;
   padding: 3px;
   border-radius: 3px;
-  color: #fff;
+  color: #14213D;
   font-size: 11px;
   font-weight: 600;
   position: absolute;
@@ -236,3 +240,116 @@
 }
 
 
+/* modal css */
+.shade-area{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container{
+  width: 300px;
+  height: auto;
+  padding: 20px;
+  background-color: #fff;
+  position: relative;
+}
+
+.delete-icon{
+  background-color: #e00a02;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  cursor: pointer;
+}
+
+/* modal css */
+.shade-area{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container{
+  width: 300px;
+  height: auto;
+  padding: 20px;
+  background-color: #fff;
+  position: relative;
+}
+
+.delete-icon{
+  background-color: #e00a02;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  cursor: pointer;
+}
+
+
+.text-h3 {
+  text-align: center;
+}
+
+.container-text {
+  background-color: #E5E5E5;
+  height: 100%;
+  width: 100%;
+  margin: none;
+  padding-top: 30px;
+  padding-bottom: 0px;
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+.addProductBtn:hover {
+  color: brown;
+  font-style: bold;
+}
+
+.Aboutus {
+  margin: 50px;
+}
+
+.About-us-title {
+  text-align: center;
+  margin: 50px;
+}
+
+/*logout*/
+
+.btn-logout {
+  background-color: #FCA311;
+  border-radius: 10px;
+  padding: 3px;
+}

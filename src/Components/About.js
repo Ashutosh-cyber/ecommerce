@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Navbar } from "./Navbar";
 import { auth, fs } from "../Config/Config";
 
@@ -42,8 +41,10 @@ export const About = () => {
   return (
     <>
       <Navbar user={user} />
-      <div>
-        <div className="About-us-container">About us</div>
+
+      <div className="About-us-container">
+        <h1 className="About-us-title">About us</h1>
+
         <p className="Aboutus">
           Agriculture is the backbone of the Indian Economy"- said Mahatma
           Gandhi six decades ago. Even today, the situation is still the same,

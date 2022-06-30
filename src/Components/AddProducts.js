@@ -109,7 +109,7 @@ export const AddProducts = () => {
 
         <label>Phone number</label>
         <input
-          type="text"
+          type="tel"
           className="form-control"
           required
           onChange={(e) => setPhone(e.target.value)}

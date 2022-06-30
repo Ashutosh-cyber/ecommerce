@@ -19,7 +19,9 @@ export const Navbar = ({ user, totalProducts }) => {
     <div className="navbar">
       <div className="leftside">
         <div className="logo">
-          <img src={logo} alt="logo" />
+          <Link to="/home">
+            <img src={logo} alt="logo" />
+          </Link>
         </div>
       </div>
       <div className="rightside">
@@ -72,7 +74,7 @@ export const Navbar = ({ user, totalProducts }) => {
               {<span className="cart-indicator">{totalProducts}</span>}
             </div>
 
-            <div className="btn btn-danger btn-md" onClick={handleLogout}>
+            <div className="btn-logout" onClick={handleLogout}>
               LOGOUT
             </div>
           </>

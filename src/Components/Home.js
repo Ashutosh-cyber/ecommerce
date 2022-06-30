@@ -104,7 +104,16 @@ export const Home = (props) => {
   return (
     <>
       <Navbar user={user} totalProducts={totalProducts} />
-      <br></br>
+      <div className="container-text">
+        <h4 className="text-h3">
+          Are you a farmer? If yes{" "}
+          <Link className="addProductBtn" to="/add-products">
+            Click Here
+          </Link>{" "}
+          to add products
+        </h4>
+        <br></br>
+      </div>
       {products.length > 0 && (
         <div className="container-fluid">
           <h1 className="text-center">Products</h1>
